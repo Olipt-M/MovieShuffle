@@ -1,0 +1,36 @@
+@import "variables";
+@import "reset";
+@import "index";
+@import "movieDescription";
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    margin: 5rem;
+}
+
+a {
+    text-decoration: none;
+    color: $color-text-dark;
+    cursor: pointer;
+}
+
+header {
+    .logo {
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: "paralucent";
+    }
+    
+    hr {
+        margin-top: 5rem;
+        opacity: 0.2;
+    }
+}
+
+h1, h2 {
+    font-weight: bold;
+    font-family: "paralucent";
+}

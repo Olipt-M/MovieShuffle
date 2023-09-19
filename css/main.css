@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.movies-container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 576px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.movie-card {
+  position: relative;
+}
+.movie-card img {
+  height: 100%;
+}
+.movie-card .card-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0 2rem 2rem 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+}
+.movie-card .card-description h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+.movie-card .card-description h2 a {
+  color: #fff;
+}
+.movie-card .card-description p {
+  font-size: 1.3rem;
+  color: #fff;
+  margin: 0.5rem 0 0 0;
+}
+
+.movie-container {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .movie-container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.poster-container {
+  display: grid;
+  place-items: center;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.description-container h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.description-container p:nth-of-type(1) {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+}
+.description-container p:nth-of-type(2) {
+  margin: 4rem 0 0 0;
+}
+.description-container p:nth-of-type(3) {
+  margin: 4rem 0 0 0;
+}
+.description-container p:nth-of-type(4) {
+  font-weight: bold;
+  margin: 0;
+}
+.description-container a {
+  display: block;
+  margin-top: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  margin: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+header .logo {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: "paralucent";
+}
+header hr {
+  margin-top: 5rem;
+  opacity: 0.2;
+}
+
+h1, h2 {
+  font-weight: bold;
+  font-family: "paralucent";
+}
+
+/*# sourceMappingURL=main.css.map */
