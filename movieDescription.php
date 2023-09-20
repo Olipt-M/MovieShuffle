@@ -2,13 +2,35 @@
   $find = false;
   $data = array("name" => "Film introuvable");
   if (isset($_GET["id"])) {
-    $movies = json_decode(file_get_contents("movies.json"), true);
+    $dsn = "mysql:host=localhost;dbname=movieshuffle";
+    $db = new PDO($dsn, "root", "root");
 
-    foreach ($movies as $movie) {
-      if ($movie["id"] == $_GET["id"]) {
-        $find = true;
-        $data = $movie;
-      }
+    $query = $db->prepare("
+      SELECT
+        movies.id AS id,
+        movies.title AS title,
+        movies.description AS description,
+        movies.releaseDate AS releaseDate,
+        movies.duration AS duration,
+        movies.video AS video,
+        GROUP_CONCAT(genres.genre SEPARATOR ', ') AS genres
+      FROM movies
+      INNER JOIN movies_genres
+      ON movies.id = movies_genres.movie_id
+      INNER JOIN genres
+      ON movies_genres.genre_id = genres.id
+      WHERE movies.id = :id
+      GROUP BY movies.id
+    ");
+    $query->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+    $query->execute();
+    // var_dump($query->errorInfo());
+    $movie = $query->fetch();
+    // var_dump($movie);
+
+    if ($movie) {
+      $find = true;
+      $data = $movie;
     }
   }
 
@@ -27,7 +49,7 @@
 
     <p><?= $data["description"] ?></p>
 
-    <p><?= implode(', ', $data["genres"]) ?></p>
+    <p><?= $data["genres"] ?></p>
     <p><?= date("G\hi", mktime(0, $data["duration"])) ?> - <?= date("d/m/Y", strtotime($data["releaseDate"])) ?></p>
 
     <a href="<?= $data["video"] ?>" target="_blank">Bande-annonce</a>

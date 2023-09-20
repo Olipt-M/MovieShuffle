@@ -1,5 +1,17 @@
 <?php
-  $movies = json_decode(file_get_contents("movies.json"), true);
+  $dsn = "mysql:host=localhost;dbname=movieshuffle";
+  $db = new PDO($dsn, "root", "root");
+  $query = $db->query("
+    SELECT movies.id AS id, movies.title AS title, GROUP_CONCAT(genres.genre SEPARATOR ', ') AS genres FROM movies
+    INNER JOIN movies_genres
+    ON movies.id = movies_genres.movie_id
+    INNER JOIN genres
+    ON movies_genres.genre_id = genres.id
+    GROUP BY movies.id
+  ");
+  $movies = $query->fetchAll(PDO::FETCH_ASSOC);
+  // var_dump($movies);
+  
   include("templates/header.php");
 ?>
 
@@ -11,7 +23,7 @@
         <h2>
           <a href="./movieDescription.php?id=<?= $movie["id"] ?>"><?= $movie["title"] ?></a>
         </h2>
-        <p><?= implode(', ', $movie["genres"]) ?></p>
+        <p><?= $movie["genres"] ?></p>
       </div>
     </div>
   <?php } ?>
