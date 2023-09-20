@@ -13,6 +13,12 @@
 <body>
   <div class="container">
     <header>
-      <a href="index.php" class="logo">MovieShuffle</a>
+      <div class="title-bar">
+        <a href="index.php" class="logo">MovieShuffle</a>
+        <form class="search-bar" action="researchResults.php" method="get">
+          <img src="./features/loupe.svg" alt="search" class="search-icon">
+          <input type="text" class="search-input" placeholder="Rechercher un film" name="search" value="<?= $_GET["search"] ?>">
+        </form>
+      </div>
       <hr>
     <header>

@@ -143,10 +143,33 @@ a {
   cursor: pointer;
 }
 
-header .logo {
+header .title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .title-bar .logo {
   font-size: 3rem;
   font-weight: bold;
   font-family: "paralucent";
+}
+header .title-bar .search-bar {
+  display: flex;
+  align-items: center;
+}
+header .title-bar .search-bar .search-icon {
+  width: 25px;
+  height: 25px;
+}
+header .title-bar .search-bar .search-input {
+  margin-left: 1rem;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0;
+}
+header .title-bar .search-bar .search-input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 header hr {
   margin-top: 5rem;

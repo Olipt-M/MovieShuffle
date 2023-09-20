@@ -18,10 +18,38 @@ a {
 }
 
 header {
-    .logo {
-        font-size: 3rem;
-        font-weight: bold;
-        font-family: "paralucent";
+    .title-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            font-family: "paralucent";
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+
+            .search-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .search-input {
+                margin-left: 1rem;
+                border: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                padding: 0.5rem 0;
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 1px solid rgba(0, 0, 0, 1);
+                }
+            }
+        }
     }
     
     hr {
