@@ -1,0 +1,23 @@
+.search-container {
+  margin-top: 3rem;
+
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+.search-card {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 3rem;
+  margin-top: 2rem;
+
+  @media (min-width: $md-breakpoint) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 3rem;
+  }
+}

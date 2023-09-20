@@ -1,5 +1,5 @@
 <?php
-  $search = trim(strip_tags($_GET["search"]));
+  $search = "%" . trim(strip_tags($_GET["search"])) . "%";
 
   $dsn = "mysql:host=localhost;dbname=movieshuffle";
   $db = new PDO($dsn, "root", "root");
@@ -28,16 +28,24 @@
   include("templates/header.php");
 ?>
 
-<main class="movies-container">
+<main class="search-container">
+  <?php if (count($movies) === 0) { ?>
+    <h1>Aucun film pour votre recherche</h1>
+  <?php } else { ?>
+    <h1><?= count($movies) ?> films pour votre recherche</h1>
+  <?php } ?>
+
   <?php foreach ($movies as $movie) { ?>
     <div class="search-card">
-      <img src="img/poster/<?= str_replace(' ', '-', strtolower($movie["title"])) ?>.jpg" alt="Affiche du film <?= $movie["title"] ?>">
+      <div class="search-poster">
+        <img src="img/poster/<?= str_replace(' ', '-', strtolower($movie["title"])) ?>.jpg" alt="Affiche du film <?= $movie["title"] ?>">
+      </div>
       <div class="search-description">
         <h2>
           <a href="./movieDescription.php?id=<?= $movie["id"] ?>"><?= $movie["title"] ?></a>
         </h2>
         <p><?= $movie["genres"] ?></p>
-        <p><?= $movie["description"] ?></p>
+        <p><?= substr($movie["description"], 0, 200) ?></p>
       </div>
     </div>
   <?php } ?>
