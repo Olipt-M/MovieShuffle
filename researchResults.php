@@ -44,8 +44,8 @@
         <h2>
           <a href="./movieDescription.php?id=<?= $movie["id"] ?>"><?= $movie["title"] ?></a>
         </h2>
-        <p><?= $movie["genres"] ?></p>
-        <p><?= substr($movie["description"], 0, 200) ?></p>
+        <p class="search-genres"><?= $movie["genres"] ?></p>
+        <p class="search-description"><?= implode(' ', array_splice(explode(' ', $movie["description"]), 0, 20)) . "..." ?></p>
       </div>
     </div>
   <?php } ?>

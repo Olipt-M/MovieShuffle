@@ -138,18 +138,22 @@ img {
 
 .search-card {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   gap: 3rem;
   margin-top: 2rem;
 }
+.search-card h2 {
+  margin: 0;
+  font-size: 2rem;
+}
 @media (min-width: 768px) {
-  .search-card {
-    grid-template-columns: 1fr 2fr;
+  .search-card h2 {
+    font-size: 3rem;
   }
 }
-.search-card h2 {
-  margin-top: 0;
-  font-size: 3rem;
+.search-card .search-genres {
+  margin-top: 0.5rem;
+  color: #505050;
 }
 
 body {

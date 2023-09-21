@@ -8,16 +8,21 @@
 
 .search-card {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
   gap: 3rem;
   margin-top: 2rem;
 
-  @media (min-width: $md-breakpoint) {
-    grid-template-columns: 1fr 2fr;
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+
+    @media (min-width: $md-breakpoint) {
+      font-size: 3rem;
+    }
   }
 
-  h2 {
-    margin-top: 0;
-    font-size: 3rem;
+  .search-genres {
+    margin-top: 0.5rem;
+    color: $color-text-less-dark;
   }
 }
