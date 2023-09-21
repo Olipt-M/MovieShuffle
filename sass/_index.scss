@@ -1,5 +1,8 @@
 .movies-container {
   margin-top: 3rem;
+}
+
+.movies-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -53,5 +56,30 @@
       color: $color-text-light;
       margin: 0.5rem 0 0 0;
     }
+  }
+}
+
+.page-buttons-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-button {
+  display: block;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.4;
+    transform: scale(0.9);
   }
 }

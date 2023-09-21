@@ -2,7 +2,11 @@
   margin-top: 3rem;
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
+
+    @media (min-width: $md-breakpoint) {
+      font-size: 4rem;
+    }
   }
 }
 
