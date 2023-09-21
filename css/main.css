@@ -188,7 +188,25 @@ header .title-bar .search-bar .search-icon {
   width: 25px;
   height: 25px;
 }
+header .title-bar .search-bar .search-icon:hover {
+  cursor: pointer;
+}
+header .title-bar .search-bar .search-icon.closed {
+  display: none;
+}
+header .title-bar .search-bar .close-search-icon {
+  width: 25px;
+  height: 25px;
+  display: none;
+}
+header .title-bar .search-bar .close-search-icon:hover {
+  cursor: pointer;
+}
+header .title-bar .search-bar .close-search-icon.opened {
+  display: block;
+}
 header .title-bar .search-bar .search-input {
+  display: none;
   margin-left: 1rem;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -197,6 +215,9 @@ header .title-bar .search-bar .search-input {
 header .title-bar .search-bar .search-input:focus {
   outline: none;
   border-bottom: 1px solid rgb(0, 0, 0);
+}
+header .title-bar .search-bar .search-input.opened {
+  display: block;
 }
 header hr {
   margin-top: 5rem;
