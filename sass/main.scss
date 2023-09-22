@@ -6,6 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: $color-background-dark;
 }
 
 .container {
@@ -14,7 +15,7 @@ body {
 
 a {
     text-decoration: none;
-    color: $color-text-dark;
+    color: $color-text-light;
     cursor: pointer;
 }
 
@@ -66,12 +67,13 @@ header {
                 display: none;
                 margin-left: 1rem;
                 border: none;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                border-bottom: 1px solid rgba( $color-text-light, 1);
                 padding: 0.5rem 0;
+                color: $color-text-light;
+                background: $color-background-dark;
 
                 &:focus {
                     outline: none;
-                    border-bottom: 1px solid rgba(0, 0, 0, 1);
                 }
 
                 &.opened {

@@ -1,5 +1,6 @@
 .search-container {
   margin-top: 3rem;
+  color: $color-text-light;
 
   h1 {
     font-size: 3rem;
@@ -27,6 +28,6 @@
 
   .search-genres {
     margin-top: 0.5rem;
-    color: $color-text-less-dark;
+    color: rgba($color-text-light, 0.6);
   }
 }

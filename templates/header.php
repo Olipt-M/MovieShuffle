@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MovieShuffle</title>
+  <title>MyPHPmovies</title>
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=poppins:400" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/oek3jfu.css?ver=1.0.4" />
@@ -14,7 +14,7 @@
   <div class="container">
     <header>
       <div class="title-bar">
-        <a href="index.php" class="logo">MovieShuffle</a>
+        <a href="index.php" class="logo">MyPHPmovies</a>
         <form class="search-bar" action="researchResults.php" method="get">
           <label for="search-input"><img src="./features/loupe.svg" alt="open search bar button" class="search-icon" onclick="displaySearchBar()"></label>
           <img src="./features/cross.svg" alt="close search bar button" class="close-search-icon" onclick="closeSearchBar()">

@@ -70,7 +70,7 @@
 .page-button {
   display: block;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid $color-text-light;
   border-radius: 5px;
   width: 30px;
   height: 30px;
@@ -79,7 +79,6 @@
   &.disabled {
     cursor: default;
     pointer-events: none;
-    opacity: 0.4;
-    transform: scale(0.9);
+    opacity: 0.6;
   }
 }
