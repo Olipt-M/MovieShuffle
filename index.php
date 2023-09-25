@@ -2,7 +2,7 @@
   $dsn = "mysql:host=localhost;dbname=movieshuffle";
   $db = new PDO($dsn, "root", "root");
   
-  $nbMoviesPerPage = 10;
+  $nbMoviesPerPage = 5;
   
   if (isset($_GET["page"])) {
     $indexFirstMovieOfPage = ($_GET["page"] - 1) * $nbMoviesPerPage;
@@ -21,7 +21,7 @@
     LIMIT $indexFirstMovieOfPage,$nbMoviesPerPage;
   ");
   $movies = $queryMovies->fetchAll(PDO::FETCH_ASSOC);
-  // var_dump($movies);
+  // echo '<pre style="color: white;">', var_dump($movies), '<pre>';
 
   // Recherche du nombre total de films
   $queryNbMovies = $db->query("SELECT COUNT(*) AS movies_number FROM movies;");

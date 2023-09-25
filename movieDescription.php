@@ -2,6 +2,7 @@
   $find = false;
   $data = array("name" => "Film introuvable");
   if (isset($_GET["id"])) {
+    $id = trim(strip_tags($_GET["id"]));
     $dsn = "mysql:host=localhost;dbname=movieshuffle";
     $db = new PDO($dsn, "root", "root");
 
@@ -22,7 +23,7 @@
       WHERE movies.id = :id
       GROUP BY movies.id
     ");
-    $query->bindParam(":id", $_GET["id"], PDO::PARAM_INT);
+    $query->bindParam(":id", $id, PDO::PARAM_INT);
     $query->execute();
     // var_dump($query->errorInfo());
     $movie = $query->fetch();
